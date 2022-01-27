@@ -1,0 +1,14 @@
+Property Management System Demo
+
+This project is property management software, to realizes the business workflow of the property management company.
+Property managers can realize online property management through this system.
+At the same time, owners can get information about property online.
+
+User : property owner, Property Manager
+
+Include Function : 
+  Property Management
+  Biulding Management
+  Owners Management
+  Fee Management
+  System Management
