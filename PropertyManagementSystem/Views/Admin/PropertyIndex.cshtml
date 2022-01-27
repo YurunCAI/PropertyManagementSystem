@@ -1,0 +1,68 @@
+﻿@model PropertyManagementSystem.Models.w_property_information
+
+@{
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>Property Basic Information</h3>
+                    @if (Model != null)
+                    {
+                        <table class="table table-bordered" style="margin-top:30px">
+                            <tr>
+                                <th>Property Name:</th>
+                                <td>@Model.property_name</td>
+                                <th>Property Area:</th>
+                                <td>@Model.property_area</td>
+                            </tr>
+                            <tr>
+                                <th>Property Parking:</th>
+                                <td>@Model.property_parking</td>
+                                <th>Number of Building:</th>
+                                <td>@Model.building_count</td>
+                            </tr>
+                        </table>
+
+                        <table class="table table-bordered" style="margin-top:30px">
+                            <tr>
+                                <th>Contact Name:</th>
+                                <td>@Model.contact_name</td>
+                                <th>Contact Phone:</th>
+                                <td>@Model.contact_phone</td>
+                                <th>Contact Email:</th>
+                                <td>@Model.contact_email</td>
+                            </tr>
+                        </table>
+
+                        <table class="table table-bordered" style="margin-top:30px">
+                            <tr>
+                                <th>Property Introduction</th>
+                            </tr>
+                            <tr>
+                                <td>@Model.property_introduction</td>
+                            </tr>
+                        </table>
+                        <input type="button" class="btn btn-default" value="Edit" onclick="javascript: window.location.href='/Admin/EditProperty'" />
+                        <input type="button" class="btn btn-default" onclick="javascript: window.history.back();" value="Back" />
+                    }
+                    else
+                    {
+                        <p>please add a new property data</p>
+                        <input type="button" class="btn btn-default" value="Add New Property" onclick="javascript: window.location.href='/Admin/AddNewProperty'" />
+                        <input type="button" class="btn btn-default" onclick="javascript: window.history.back();" value="Back" />
+                    }
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PropertyManagementSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="w_admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="nickname" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="permission" Type="int" Nullable="false" />
+    <Property Name="createtime" Type="date" />
+  </EntityType>
+  <EntityType Name="w_property_information">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="property_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="property_parking" Type="int" Nullable="false" />
+    <Property Name="property_area" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="building_count" Type="int" Nullable="false" />
+    <Property Name="contact_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="contact_phone" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="contact_email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="property_introduction" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityContainer Name="PropertyManagementSystemModelStoreContainer">
+    <EntitySet Name="w_admin" EntityType="Self.w_admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="w_property_information" EntityType="Self.w_property_information" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

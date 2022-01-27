@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/css/bootstrap-clearmin.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/css/roboto.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/css/material-design.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/css/small-n-flat.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/css/font-awesome.min.css">
+    <title>@Page.Title</title>
+    @RenderSection("head", required: false)
+</head>
+<body class="cm-no-transition cm-1-navbar">
+    <div id="cm-menu">
+        <nav class="cm-navbar cm-navbar-primary">
+            <div class="cm-flex"><a href="index.html" class="cm-logo"></a></div>
+            <div class="btn btn-primary md-menu-white" data-toggle="cm-menu"></div>
+        </nav>
+        <div id="cm-menu-content">
+            <div id="cm-menu-items-wrapper">
+                <div id="cm-menu-scroller">
+                    <ul class="cm-menu-items">
+                        <!-- Property Management -->
+                        <li class="active cm-submenu">
+                            <a class="sf-layers">Property Management<span class="caret"></span></a>
+                            <ul>
+                                <li><a href="/Admin/PropertyIndex">Property Basic Information</a></li>
+                                <li><a href="layouts-breadcrumb2.html">Add New Public Utilites</a></li>
+                                <li><a href="layouts-breadcrumb2.html">Edit Current Public Utilites</a></li>
+                                <li><a href="layouts-breadcrumb2.html">Add New Announcement</a></li>
+                                <li><a href="layouts-breadcrumb2.html">Edit Current Announcement</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Building Management -->
+                        <li class="cm-submenu">
+                            <a class="sf-house">Building Management<span class="caret"></span></a>
+                            <ul>
+                                <li><a href="layouts-breadcrumb2.html">Add New Building Information</a></li>
+                                <li><a href="layouts-breadcrumb2.html">Edit Current Building Information</a></li>
+                                <li><a href="layouts-breadcrumb2.html">Complaints Management</a></li>
+                                <li><a href="layouts-breadcrumb2.html">Repair Management</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Fees Management -->
+                        <li class="cm-submenu">
+                            <a class="sf-money">Fee Management<span class="caret"></span></a>
+                            <ul>
+                                <li><a href="layouts-breadcrumb2.html">Add New Fee Type</a></li>
+                                <li><a href="layouts-breadcrumb2.html">Edit Current Fee Type</a></li>
+                                <li><a href="layouts-breadcrumb2.html">Add Owners Fee</a></li>
+                                <li><a href="layouts-breadcrumb2.html">Edit Current Owners Fee</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Owner Management -->
+                        <li class="cm-submenu">
+                            <a class="sf-profile-group">Owner Management<span class="caret"></span></a>
+                            <ul>
+                                <li><a href="layouts-breadcrumb2.html">Add New Owner</a></li>
+                                <li><a href="layouts-breadcrumb2.html">Edit Current Owners</a></li>
+                                <li><a href="layouts-breadcrumb2.html">Add New Manager</a></li>
+                                <li><a href="layouts-breadcrumb2.html">Edit Current Managers</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- System Management -->
+                        <li class="cm-submenu">
+                            <a class="sf-terminal">System Management<span class="caret"></span></a>
+                            <ul>
+                                <li><a href="layouts-breadcrumb2.html">System Code Maintenance</a></li>
+                                <li><a href="layouts-breadcrumb2.html">Add New Administrator</a></li>
+                            </ul>
+                        </li>
+
+
+                        <!-- System Management -->
+                        <li class="cm-submenu">
+                            <a class="sf-lock-open" href="layouts-breadcrumb2.html">Log Off<span class="caret"></span></a>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header id="cm-header">
+        <nav class="cm-navbar cm-navbar-primary">
+            <div class="btn btn-primary md-menu-white hidden-md hidden-lg" data-toggle="cm-menu"></div>
+            <div class="cm-flex">
+                <h1>Home</h1>
+                <form id="cm-search" action="index.html" method="get">
+                    <input type="search" name="q" autocomplete="off" placeholder="Search...">
+                </form>
+            </div>
+            <div class="pull-right">
+                <div id="cm-search-btn" class="btn btn-primary md-search-white" data-toggle="cm-search"></div>
+            </div>
+            <div class="dropdown pull-right">
+                <button class="btn btn-primary md-notifications-white" data-toggle="dropdown"> <span class="label label-danger">23</span> </button>
+                <div class="popover cm-popover bottom">
+                    <div class="arrow"></div>
+                    <div class="popover-content">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item">
+                                <h4 class="list-group-item-heading text-overflow">
+                                    <i class="fa fa-fw fa-envelope"></i> Nunc volutpat aliquet magna.
+                                </h4>
+                                <p class="list-group-item-text text-overflow">Pellentesque tincidunt mollis scelerisque. Praesent vel blandit quam.</p>
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <h4 class="list-group-item-heading">
+                                    <i class="fa fa-fw fa-envelope"></i> Aliquam orci lectus
+                                </h4>
+                                <p class="list-group-item-text">Donec quis arcu non risus sagittis</p>
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <h4 class="list-group-item-heading">
+                                    <i class="fa fa-fw fa-warning"></i> Holy guacamole !
+                                </h4>
+                                <p class="list-group-item-text">Best check yo self, you're not looking too good.</p>
+                            </a>
+                        </div>
+                        <div style="padding:10px"><a class="btn btn-success btn-block" href="#">Show me more...</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown pull-right">
+                <button class="btn btn-primary md-account-circle-white" data-toggle="dropdown"></button>
+                <ul class="dropdown-menu">
+                    <li class="disabled text-center">
+                        <a style="cursor:default;"><strong>John Smith</strong></a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-cog"></i> Settings</a>
+                    </li>
+                    <li>
+                        <a href="login.html"><i class="fa fa-fw fa-sign-out"></i> Sign out</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- global area instead start -->
+    <div id="global">
+
+        @RenderBody()
+
+    </div>
+    <!-- global area instead end-->
+    <script src="~/Content/assets/js/lib/jquery.min.js"></script>
+    <script src="~/Content/assets/js/jquery.mousewheel.min.js"></script>
+    <script src="~/Content/assets/js/jquery.cookie.min.js"></script>
+    <script src="~/Content/assets/js/fastclick.min.js"></script>
+    <script src="~/Content/assets/js/bootstrap.min.js"></script>
+    <script src="~/Content/assets/js/clearmin.min.js"></script>
+    <script src="~/Content/assets/js/demo/home.js"></script>
+</body>
+</html>

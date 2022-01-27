@@ -1,0 +1,112 @@
+﻿@model PropertyManagementSystem.Models.w_property_information
+@{
+    ViewBag.Title = "Add Property";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>Edit Property</h3>
+                    <form action="/Admin/EditProperty" method="post" onsubmit="return checkForm()">
+                        <!-- Hide Property ID-->
+                        <input type="hidden" name="id" value="@Model.id" />
+                        <table class="table table-bordered" style="margin-top:30px">
+                            <tr>
+                                <th>Property Name:</th>
+                                <td><input type="text" name="property_name" value="@Model.property_name" class="form-control" /></td>
+                                <th>Property Area:</th>
+                                <td><input type="text" name="property_area" value="@Model.property_area" class="form-control" /></td>
+                            </tr>
+                            <tr>
+                                <th>Property Parking:</th>
+                                <td><input type="text" name="property_parking" value="@Model.property_parking" class="form-control" /></td>
+                                <th>Number of Building:</th>
+                                <td><input type="text" name="building_count" value="@Model.building_count" class="form-control" /></td>
+                            </tr>
+                        </table>
+
+                        <table class="table table-bordered" style="margin-top:30px">
+                            <tr>
+                                <th>Contact Name:</th>
+                                <td><input type="text" name="contact_name" value="@Model.contact_name" class="form-control" /></td>
+                                <th>Contact Phone:</th>
+                                <td><input type="text" name="contact_phone" value="@Model.contact_phone" class="form-control" /></td>
+                                <th>Contact Email:</th>
+                                <td><input type="text" name="contact_email" value="@Model.contact_email" class="form-control" /></td>
+                            </tr>
+                        </table>
+
+                        <table class="table table-bordered" style="margin-top:30px">
+                            <tr>
+                                <th>Property Introduction</th>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="property_introduction" value="@Model.property_introduction" class="form-control" /></td>
+                            </tr>
+                        </table>
+                        <input type="submit" class="btn btn-default" value="Edit" />
+                        <input type="button" class="btn btn-default" onclick="javascript: window.history.back();" value="Back" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script>
+    //check empty
+    function checkForm() {
+        var property_name = $("#property_name").val();
+        if (property_name.length < 1) {
+            $("#notice").text("property_name can not empty!");
+            //stop process
+            return false;
+        }
+        var property_area = $("#property_area").val();
+        if (property_area.length < 1) {
+            $("#notice").text("property_area can not empty!");
+            //stop process
+            return false;
+        }
+        var property_parking = $("#property_parking").val();
+        if (property_parking.length < 1) {
+            $("#notice").text("property_parking can not empty!");
+            //stop process
+            return false;
+        }
+        var building_count = $("#building_count").val();
+        if (building_count.length < 1) {
+            $("#notice").text("building_count can not empty!");
+            //stop process
+            return false;
+        }
+        var contact_name = $("#contact_name").val();
+        if (contact_name.length < 1) {
+            $("#notice").text("contact_name can not empty!");
+            //stop process
+            return false;
+        }
+        var contact_phone = $("#contact_phone").val();
+        if (contact_phone.length < 1) {
+            $("#notice").text("contact_phone can not empty!");
+            //stop process
+            return false;
+        }
+        var contact_email = $("#contact_email").val();
+        if (contact_email.length < 1) {
+            $("#notice").text("contact_email can not empty!");
+            //stop process
+            return false;
+        }
+        var property_introduction = $("#property_introduction").val();
+        if (property_introduction.length < 1) {
+            $("#notice").text("property_introduction can not empty!");
+            //stop process
+            return false;
+        }
+    }
+</script>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PropertyManagementSystemModelStoreContainer" CdmEntityContainer="PropertyManagementSystemEntities">
+    <EntitySetMapping Name="w_admin">
+      <EntityTypeMapping TypeName="PropertyManagementSystemModel.w_admin">
+        <MappingFragment StoreEntitySet="w_admin">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="nickname" ColumnName="nickname" />
+          <ScalarProperty Name="permission" ColumnName="permission" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="w_property_information">
+      <EntityTypeMapping TypeName="PropertyManagementSystemModel.w_property_information">
+        <MappingFragment StoreEntitySet="w_property_information">
+          <ScalarProperty Name="property_introduction" ColumnName="property_introduction" />
+          <ScalarProperty Name="contact_email" ColumnName="contact_email" />
+          <ScalarProperty Name="contact_phone" ColumnName="contact_phone" />
+          <ScalarProperty Name="contact_name" ColumnName="contact_name" />
+          <ScalarProperty Name="building_count" ColumnName="building_count" />
+          <ScalarProperty Name="property_area" ColumnName="property_area" />
+          <ScalarProperty Name="property_parking" ColumnName="property_parking" />
+          <ScalarProperty Name="property_name" ColumnName="property_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
