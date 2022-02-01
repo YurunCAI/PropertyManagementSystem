@@ -11,14 +11,20 @@ namespace PropertyManagementSystem.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class w_admin
     {
         public int id { get; set; }
+        [DisplayName("Account")]
         public string username { get; set; }
+        [DisplayName("Password")]
         public string password { get; set; }
+        [DisplayName("Admin Name")]
         public string nickname { get; set; }
+        [DisplayName("Permission")]
         public int permission { get; set; }
+        [DisplayName("Create Time")]
         public Nullable<System.DateTime> createtime { get; set; }
     }
 }

@@ -46,10 +46,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -129,8 +129,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\EditAdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\SystemController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -153,6 +155,9 @@
       <DependentUpon>PropertyManagementDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\w_property_information.cs">
+      <DependentUpon>PropertyManagementDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\w_system_params.cs">
       <DependentUpon>PropertyManagementDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1926,6 +1931,16 @@
     <Content Include="Views\Admin\PropertyIndex.cshtml" />
     <Content Include="Views\Admin\AddNewProperty.cshtml" />
     <Content Include="Views\Admin\EditProperty.cshtml" />
+    <Content Include="Views\System\Create.cshtml" />
+    <Content Include="Views\System\Delete.cshtml" />
+    <Content Include="Views\System\Details.cshtml" />
+    <Content Include="Views\System\Edit.cshtml" />
+    <Content Include="Views\System\Index.cshtml" />
+    <Content Include="Views\EditAdmin\Create.cshtml" />
+    <Content Include="Views\EditAdmin\Delete.cshtml" />
+    <Content Include="Views\EditAdmin\Details.cshtml" />
+    <Content Include="Views\EditAdmin\Edit.cshtml" />
+    <Content Include="Views\EditAdmin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

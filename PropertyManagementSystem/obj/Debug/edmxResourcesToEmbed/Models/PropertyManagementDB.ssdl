@@ -25,8 +25,18 @@
     <Property Name="contact_email" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="property_introduction" Type="varchar" MaxLength="500" />
   </EntityType>
+  <EntityType Name="w_system_params">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
   <EntityContainer Name="PropertyManagementSystemModelStoreContainer">
     <EntitySet Name="w_admin" EntityType="Self.w_admin" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="w_property_information" EntityType="Self.w_property_information" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="w_system_params" EntityType="Self.w_system_params" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

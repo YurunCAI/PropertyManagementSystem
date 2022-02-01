@@ -1,0 +1,80 @@
+﻿@model IEnumerable<PropertyManagementSystem.Models.w_admin>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">System Params Management</div>
+                <div class="panel-body">
+                    <table class="table">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.username)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.password)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.nickname)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.createtime)
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.username)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.password)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nickname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.createtime)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                            <a href="/EditAdmin/DeleteConfirmed/@item.id" onclick="return confirm('Delete This Admin Account?')">Delete</a>
+                        </td>
+                    </tr>
+                        }
+
+                    </table>
+
+                    <form action="/EditAdmin/Create" style="margin-top:40px" method="post">
+                        <table class="table">
+                            <tr>
+                                <td align="right">Login Account:</td>
+                                <td><input class="form-control" value="" name="username" required placeholder="Please enter Account!" /></td>
+                            </tr>
+                            <tr>
+                                <td align="right">Password:</td>
+                                <td><input class="form-control" value="" name="password" required placeholder="Please enter Password!" /></td>
+                            </tr>
+                            <tr>
+                                <td align="right">Admin Name:</td>
+                                <td><input class="form-control" value="" name="nickname" required placeholder="Please enter Name!" /></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="center">
+                                    <input type="submit" value="Save" class="btn btn-default" />
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

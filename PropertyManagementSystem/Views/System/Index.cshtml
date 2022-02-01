@@ -1,0 +1,112 @@
+﻿@model IEnumerable<PropertyManagementSystem.Models.w_system_params>
+
+@{
+    ViewBag.Title = "System Params Management";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">System Params Management</div>
+                <div class="panel-body">
+                    <!-- action = "", submit to self-->
+                    <form action="" method="get">
+                        <div class="row">
+                            <div class="col-md-2" style="text-align:right; line-height: 35px;">
+                                please select param type:
+                            </div>
+                            <div class="col-md-2">
+                                <select name="type" class="form-control">
+                                    <option value="">All</option>
+                                    <option value="decoration">Decoration Standard</option>
+                                    <option value="room">Number of Rooms</option>
+                                    <option value="building">Building Type</option>
+                                    <option value="facilities">Surrounding Facilities</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="submit" class="btn btn-primary" value="Search" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr style="text-align:center">
+                            <th>
+                                @Html.DisplayNameFor(model => model.code)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.type)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    @if (Model.Count() == 0)
+                    {
+                        <tr class="success">
+                            <th colspan="4" style="text-align:center">Please Add a System Code</th>
+                        </tr>
+                    }
+                    @foreach (var item in Model)
+                    {
+                        <tr class="success">
+                            <td>
+                                @Html.DisplayFor(modelItem => item.code)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.type)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                                @*@Html.ActionLink("Details", "Details", new { id = item.id }) |*@
+                                @*@Html.ActionLink("Delete", "Delete", new { id = item.id })*@
+                                <a href="/System/DeleteConfirmed/@item.id" onclick="return confirm('Delete this data?')">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </table>
+                <!-- Add params action -->
+                <form action="/System/Create" style="margin-top:40px" method="post">
+                    <table class="table">
+                        <tr>
+                            <td align="right">Code:</td>
+                            <td><input class="form-control" value="" name="code" required placeholder="Please enter code!" /></td>
+                        </tr>
+                        <tr>
+                            <td align="right">Name:</td>
+                            <td><input class="form-control" value="" name="Name" required placeholder="Please enter Name!" /></td>
+                        </tr>
+                        <tr>
+                            <td align="right">Type:</td>
+                            <td>
+                                <select name="type" class="form-control">
+                                    <option value="decoration">Decoration Standard</option>
+                                    <option value="room">Number of Rooms</option>
+                                    <option value="building">Building Type</option>
+                                    <option value="facilities">Surrounding Facilities</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center">
+                                <input type="submit" value="Save" class="btn btn-default" />
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -14,6 +14,7 @@
   <EntityContainer Name="PropertyManagementSystemEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="w_admin" EntityType="Self.w_admin" />
     <EntitySet Name="w_property_information" EntityType="PropertyManagementSystemModel.w_property_information" />
+    <EntitySet Name="w_system_params" EntityType="PropertyManagementSystemModel.w_system_params" />
   </EntityContainer>
   <EntityType Name="w_property_information">
     <Key>
@@ -28,5 +29,14 @@
     <Property Name="contact_phone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="contact_email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="property_introduction" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="w_system_params">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>
