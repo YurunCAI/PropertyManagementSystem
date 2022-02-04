@@ -128,14 +128,17 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AddNewPublicController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\EditAdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\OwnerHomeController.cs" />
     <Compile Include="Controllers\SystemController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AddNewPublicMixModel.cs" />
     <Compile Include="Models\PropertyManagementDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -152,6 +155,9 @@
       <DependentUpon>PropertyManagementDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\w_admin.cs">
+      <DependentUpon>PropertyManagementDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\w_facilities.cs">
       <DependentUpon>PropertyManagementDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\w_property_information.cs">
@@ -1941,6 +1947,13 @@
     <Content Include="Views\EditAdmin\Details.cshtml" />
     <Content Include="Views\EditAdmin\Edit.cshtml" />
     <Content Include="Views\EditAdmin\Index.cshtml" />
+    <Content Include="Views\Shared\_OwnerDashboard.cshtml" />
+    <Content Include="Views\OwnerHome\Index.cshtml" />
+    <Content Include="Views\AddNewPublic\Create.cshtml" />
+    <Content Include="Views\AddNewPublic\Delete.cshtml" />
+    <Content Include="Views\AddNewPublic\Details.cshtml" />
+    <Content Include="Views\AddNewPublic\Edit.cshtml" />
+    <Content Include="Views\AddNewPublic\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

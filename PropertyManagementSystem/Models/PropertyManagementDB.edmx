@@ -16,6 +16,18 @@
           <Property Name="permission" Type="int" Nullable="false" />
           <Property Name="createtime" Type="date" />
         </EntityType>
+        <EntityType Name="w_facilities">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="contact_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="contact_phone" Type="varchar" MaxLength="24" Nullable="false" />
+          <Property Name="contact_email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="introduction" Type="varchar" MaxLength="300" Nullable="false" />
+        </EntityType>
         <EntityType Name="w_property_information">
           <Key>
             <PropertyRef Name="id" />
@@ -41,6 +53,7 @@
         </EntityType>
         <EntityContainer Name="PropertyManagementSystemModelStoreContainer">
           <EntitySet Name="w_admin" EntityType="Self.w_admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="w_facilities" EntityType="Self.w_facilities" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="w_property_information" EntityType="Self.w_property_information" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="w_system_params" EntityType="Self.w_system_params" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -63,6 +76,7 @@
           <EntitySet Name="w_admin" EntityType="Self.w_admin" />
           <EntitySet Name="w_property_information" EntityType="PropertyManagementSystemModel.w_property_information" />
           <EntitySet Name="w_system_params" EntityType="PropertyManagementSystemModel.w_system_params" />
+          <EntitySet Name="w_facilities" EntityType="PropertyManagementSystemModel.w_facilities" />
         </EntityContainer>
         <EntityType Name="w_property_information">
           <Key>
@@ -86,6 +100,18 @@
           <Property Name="code" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="type" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="w_facilities">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="contact_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="contact_phone" Type="String" Nullable="false" MaxLength="24" FixedLength="false" Unicode="false" />
+          <Property Name="contact_email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="introduction" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -126,6 +152,19 @@
                 <ScalarProperty Name="type" ColumnName="type" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="w_facilities">
+            <EntityTypeMapping TypeName="PropertyManagementSystemModel.w_facilities">
+              <MappingFragment StoreEntitySet="w_facilities">
+                <ScalarProperty Name="introduction" ColumnName="introduction" />
+                <ScalarProperty Name="contact_email" ColumnName="contact_email" />
+                <ScalarProperty Name="contact_phone" ColumnName="contact_phone" />
+                <ScalarProperty Name="contact_name" ColumnName="contact_name" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

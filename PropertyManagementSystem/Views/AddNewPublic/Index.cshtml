@@ -1,0 +1,92 @@
+﻿@model PropertyManagementSystem.Models.AddNewPublicMixModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">System Params Management</div>
+                <div class="panel-body">
+                    <table class="table">
+                        <tr>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Type
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model.Facilities)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.type)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                                    <a href="/AddNewPublic/DeleteConfirmed/@item.id" onclick="return confirm('Delete this data?')">Delete</a>
+                                    @*@Html.ActionLink("Delete", "Delete", new { id = item.id })*@
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+
+                    <form action="/AddNewPublic/Create" style="margin-top:40px" method="post">
+                        <table class="table">
+                            <tr>
+                                <td align="right">name:</td>
+                                <td><input class="form-control" value="" name="name" required placeholder="Please enter name!" /></td>
+                            </tr>
+                            <tr>
+                                <td align="right">type:</td>
+                                <td>
+                                    <select name="type" class="form-control">
+                                        @foreach (var item in Model.Params)
+                                        {
+                                            <option value="@Html.DisplayFor(modelItem => item.name)">
+                                                @Html.DisplayFor(modelItem => item.name)
+                                            </option>
+                                        }
+                                    </select>
+                                </td>
+                                @*<td><input class="form-control" value="" name="type" required placeholder="Please enter type!" /></td>*@
+                            </tr>
+                            <tr>
+                                <td align="right">contact_name:</td>
+                                <td><input class="form-control" value="" name="contact_name" required placeholder="Please enter contact_name!" /></td>
+                            </tr>
+                            <tr>
+                                <td align="right">contact_phone:</td>
+                                <td><input class="form-control" value="" name="contact_phone" required placeholder="Please enter contact_phone!" /></td>
+                            </tr>
+                            <tr>
+                                <td align="right">contact_email:</td>
+                                <td><input class="form-control" value="" name="contact_email" required placeholder="Please enter contact_email!" /></td>
+                            </tr>
+                            <tr>
+                                <td align="right">introduction:</td>
+                                <td><input class="form-control" value="" name="introduction" required placeholder="Please enter introduction!" /></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="center">
+                                    <input type="submit" value="Save" class="btn btn-default" />
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -28,5 +28,6 @@ namespace PropertyManagementSystem.Models
         public virtual DbSet<w_admin> w_admin { get; set; }
         public virtual DbSet<w_property_information> w_property_information { get; set; }
         public virtual DbSet<w_system_params> w_system_params { get; set; }
+        public virtual DbSet<w_facilities> w_facilities { get; set; }
     }
 }

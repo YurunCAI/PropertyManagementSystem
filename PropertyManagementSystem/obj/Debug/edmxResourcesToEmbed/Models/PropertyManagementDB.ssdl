@@ -11,6 +11,18 @@
     <Property Name="permission" Type="int" Nullable="false" />
     <Property Name="createtime" Type="date" />
   </EntityType>
+  <EntityType Name="w_facilities">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="contact_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="contact_phone" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="contact_email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="introduction" Type="varchar" MaxLength="300" Nullable="false" />
+  </EntityType>
   <EntityType Name="w_property_information">
     <Key>
       <PropertyRef Name="id" />
@@ -36,6 +48,7 @@
   </EntityType>
   <EntityContainer Name="PropertyManagementSystemModelStoreContainer">
     <EntitySet Name="w_admin" EntityType="Self.w_admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="w_facilities" EntityType="Self.w_facilities" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="w_property_information" EntityType="Self.w_property_information" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="w_system_params" EntityType="Self.w_system_params" Schema="dbo" store:Type="Tables" />
   </EntityContainer>

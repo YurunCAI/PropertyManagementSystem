@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="PropertyManagementSystemModel.w_admin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PropertyManagementSystemModel.w_property_information" Width="1.5" PointX="3.375" PointY="0.75" />
         <EntityTypeShape EntityType="PropertyManagementSystemModel.w_system_params" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PropertyManagementSystemModel.w_facilities" Width="1.5" PointX="3.25" PointY="4" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

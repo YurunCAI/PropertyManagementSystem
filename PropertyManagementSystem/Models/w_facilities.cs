@@ -12,13 +12,14 @@ namespace PropertyManagementSystem.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class w_admin
+    public partial class w_facilities
     {
         public int id { get; set; }
-        public string username { get; set; }
-        public string password { get; set; }
-        public string nickname { get; set; }
-        public int permission { get; set; }
-        public Nullable<System.DateTime> createtime { get; set; }
+        public string name { get; set; }
+        public string type { get; set; }
+        public string contact_name { get; set; }
+        public string contact_phone { get; set; }
+        public string contact_email { get; set; }
+        public string introduction { get; set; }
     }
 }
