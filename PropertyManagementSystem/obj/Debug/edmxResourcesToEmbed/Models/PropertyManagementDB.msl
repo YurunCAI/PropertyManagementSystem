@@ -51,5 +51,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="w_announcement">
+      <EntityTypeMapping TypeName="PropertyManagementSystemModel.w_announcement">
+        <MappingFragment StoreEntitySet="w_announcement">
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="contents" ColumnName="contents" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

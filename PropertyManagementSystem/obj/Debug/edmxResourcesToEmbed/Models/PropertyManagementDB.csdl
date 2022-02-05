@@ -16,6 +16,7 @@
     <EntitySet Name="w_property_information" EntityType="PropertyManagementSystemModel.w_property_information" />
     <EntitySet Name="w_system_params" EntityType="PropertyManagementSystemModel.w_system_params" />
     <EntitySet Name="w_facilities" EntityType="PropertyManagementSystemModel.w_facilities" />
+    <EntitySet Name="w_announcement" EntityType="PropertyManagementSystemModel.w_announcement" />
   </EntityContainer>
   <EntityType Name="w_property_information">
     <Key>
@@ -51,5 +52,14 @@
     <Property Name="contact_phone" Type="String" Nullable="false" MaxLength="24" FixedLength="false" Unicode="false" />
     <Property Name="contact_email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="introduction" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="w_announcement">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="contents" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="create_time" Type="DateTime" Nullable="false" Precision="0" />
   </EntityType>
 </Schema>

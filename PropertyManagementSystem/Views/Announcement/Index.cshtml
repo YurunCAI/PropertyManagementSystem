@@ -1,0 +1,73 @@
+﻿@model IEnumerable<PropertyManagementSystem.Models.w_announcement>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">System Params Management</div>
+                <div class="panel-body">
+                    <table class="table">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.title)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.create_time)
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.title)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.contents)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.create_time)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                                    <a href="/Announcement/DeleteConfirmed/@item.id" onclick="return confirm('Delete this data?')">Delete</a>
+                                    @*@Html.ActionLink("/Announcement/DeleteConfirmed", "Delete", new { id = item.id })*@
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+
+                    <form action="/Announcement/Create" style="margin-top:40px" method="post">
+                        <table class="table">
+                            <tr>
+                                <td align="right">Title:</td>
+                                <td><input class="form-control" value="" name="title" required placeholder="Please enter title!" /></td>
+                            </tr>
+                            <tr>
+                                <td align="right">contents:</td>
+                                <td><input class="form-control" value="" name="contents" required placeholder="Please enter contents!" /></td>
+                            </tr>
+                            <tr>
+                                <td align="right">create_time:</td>
+                                <td><input class="form-control" value="@DateTime.Now.ToString("yyyy-MM-dd")" name="create_time" required placeholder="Please enter create_time!" /></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="center">
+                                    <input type="submit" value="Save" class="btn btn-default" />
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
