@@ -128,11 +128,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AddBuildingController.cs" />
     <Compile Include="Controllers\AddNewPublicController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AnnouncementController.cs" />
     <Compile Include="Controllers\EditAdminController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\EditBuildingsController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\OwnerHomeController.cs" />
     <Compile Include="Controllers\SystemController.cs" />
@@ -159,6 +160,9 @@
       <DependentUpon>PropertyManagementDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\w_announcement.cs">
+      <DependentUpon>PropertyManagementDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\w_buildings.cs">
       <DependentUpon>PropertyManagementDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\w_facilities.cs">
@@ -1932,9 +1936,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Shared\_Dashboard.cshtml" />
@@ -1963,6 +1964,13 @@
     <Content Include="Views\Announcement\Details.cshtml" />
     <Content Include="Views\Announcement\Edit.cshtml" />
     <Content Include="Views\Announcement\Index.cshtml" />
+    <Content Include="Views\AddBuilding\Create.cshtml" />
+    <Content Include="Views\AddBuilding\Index.cshtml" />
+    <Content Include="Views\EditBuildings\Create.cshtml" />
+    <Content Include="Views\EditBuildings\Delete.cshtml" />
+    <Content Include="Views\EditBuildings\Details.cshtml" />
+    <Content Include="Views\EditBuildings\Edit.cshtml" />
+    <Content Include="Views\EditBuildings\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -25,6 +25,20 @@
           <Property Name="contents" Type="varchar" MaxLength="2000" Nullable="false" />
           <Property Name="create_time" Type="date" Nullable="false" />
         </EntityType>
+        <EntityType Name="w_buildings">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="address" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="owner" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="phone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="rooms" Type="int" Nullable="false" />
+          <Property Name="building_area" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="land_area" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="w_facilities">
           <Key>
             <PropertyRef Name="id" />
@@ -63,6 +77,7 @@
         <EntityContainer Name="PropertyManagementSystemModelStoreContainer">
           <EntitySet Name="w_admin" EntityType="Self.w_admin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="w_announcement" EntityType="Self.w_announcement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="w_buildings" EntityType="Self.w_buildings" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="w_facilities" EntityType="Self.w_facilities" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="w_property_information" EntityType="Self.w_property_information" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="w_system_params" EntityType="Self.w_system_params" Schema="dbo" store:Type="Tables" />
@@ -88,6 +103,7 @@
           <EntitySet Name="w_system_params" EntityType="PropertyManagementSystemModel.w_system_params" />
           <EntitySet Name="w_facilities" EntityType="PropertyManagementSystemModel.w_facilities" />
           <EntitySet Name="w_announcement" EntityType="PropertyManagementSystemModel.w_announcement" />
+          <EntitySet Name="w_buildings" EntityType="PropertyManagementSystemModel.w_buildings" />
         </EntityContainer>
         <EntityType Name="w_property_information">
           <Key>
@@ -132,6 +148,20 @@
           <Property Name="title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="contents" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
           <Property Name="create_time" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="w_buildings">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="type" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="owner" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="rooms" Type="Int32" Nullable="false" />
+          <Property Name="building_area" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="land_area" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -195,6 +225,21 @@
                 <ScalarProperty Name="create_time" ColumnName="create_time" />
                 <ScalarProperty Name="contents" ColumnName="contents" />
                 <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="w_buildings">
+            <EntityTypeMapping TypeName="PropertyManagementSystemModel.w_buildings">
+              <MappingFragment StoreEntitySet="w_buildings">
+                <ScalarProperty Name="land_area" ColumnName="land_area" />
+                <ScalarProperty Name="building_area" ColumnName="building_area" />
+                <ScalarProperty Name="rooms" ColumnName="rooms" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="owner" ColumnName="owner" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="address" ColumnName="address" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<PropertyManagementSystem.Models.w_buildings>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">System Params Management</div>
+                <div class="panel-body">
+                    <form action="/AddBuilding/Create" style="margin-top:40px" method="post">
+                        <table class="table">
+                            <tr>
+                                <td align="right">address:</td>
+                                <td><input class="form-control" value="" name="address" required placeholder="Please enter address!" /></td>
+                            </tr>
+                            <tr>
+                                <td align="right">type:</td>
+                                <td><input class="form-control" value="" name="type" required placeholder="Please enter type!" /></td>
+                            </tr>
+                            <tr>
+                                <td align="right">owner:</td>
+                                <td><input class="form-control" value="" name="owner" required placeholder="Please enter owner!" /></td>
+                            </tr>
+                            <tr>
+                                <td align="right">phone:</td>
+                                <td><input class="form-control" value="" name="phone" required placeholder="Please enter phone!" /></td>
+                            </tr>
+                            <tr>
+                                <td align="right">email:</td>
+                                <td><input class="form-control" value="" name="email" required placeholder="Please enter email!" /></td>
+                            </tr>
+                            <tr>
+                                <td align="right">rooms:</td>
+                                <td><input class="form-control" value="" name="rooms" required placeholder="Please enter rooms!" /></td>
+                            </tr>
+                            <tr>
+                                <td align="right">building_area:</td>
+                                <td><input class="form-control" value="" name="building_area" required placeholder="Please enter building_area!" /></td>
+                            </tr>
+                            <tr>
+                                <td align="right">land_area:</td>
+                                <td><input class="form-control" value="" name="land_area" required placeholder="Please enter land_area!" /></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="center">
+                                    <input type="submit" value="Save" class="btn btn-default" />
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

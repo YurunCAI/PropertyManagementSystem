@@ -10,6 +10,7 @@
         <EntityTypeShape EntityType="PropertyManagementSystemModel.w_system_params" Width="1.5" PointX="0.75" PointY="3.75" />
         <EntityTypeShape EntityType="PropertyManagementSystemModel.w_facilities" Width="1.5" PointX="3.25" PointY="4" />
         <EntityTypeShape EntityType="PropertyManagementSystemModel.w_announcement" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="PropertyManagementSystemModel.w_buildings" Width="1.5" PointX="5.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

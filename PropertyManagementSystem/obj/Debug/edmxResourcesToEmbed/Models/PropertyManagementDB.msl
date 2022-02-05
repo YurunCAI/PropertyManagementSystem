@@ -61,5 +61,20 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="w_buildings">
+      <EntityTypeMapping TypeName="PropertyManagementSystemModel.w_buildings">
+        <MappingFragment StoreEntitySet="w_buildings">
+          <ScalarProperty Name="land_area" ColumnName="land_area" />
+          <ScalarProperty Name="building_area" ColumnName="building_area" />
+          <ScalarProperty Name="rooms" ColumnName="rooms" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="owner" ColumnName="owner" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

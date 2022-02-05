@@ -20,6 +20,20 @@
     <Property Name="contents" Type="varchar" MaxLength="2000" Nullable="false" />
     <Property Name="create_time" Type="date" Nullable="false" />
   </EntityType>
+  <EntityType Name="w_buildings">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="address" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="owner" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="rooms" Type="int" Nullable="false" />
+    <Property Name="building_area" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="land_area" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
   <EntityType Name="w_facilities">
     <Key>
       <PropertyRef Name="id" />
@@ -58,6 +72,7 @@
   <EntityContainer Name="PropertyManagementSystemModelStoreContainer">
     <EntitySet Name="w_admin" EntityType="Self.w_admin" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="w_announcement" EntityType="Self.w_announcement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="w_buildings" EntityType="Self.w_buildings" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="w_facilities" EntityType="Self.w_facilities" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="w_property_information" EntityType="Self.w_property_information" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="w_system_params" EntityType="Self.w_system_params" Schema="dbo" store:Type="Tables" />
