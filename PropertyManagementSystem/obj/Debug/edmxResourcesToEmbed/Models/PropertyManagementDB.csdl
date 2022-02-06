@@ -18,6 +18,7 @@
     <EntitySet Name="w_facilities" EntityType="PropertyManagementSystemModel.w_facilities" />
     <EntitySet Name="w_announcement" EntityType="PropertyManagementSystemModel.w_announcement" />
     <EntitySet Name="w_buildings" EntityType="PropertyManagementSystemModel.w_buildings" />
+    <EntitySet Name="w_owners" EntityType="PropertyManagementSystemModel.w_owners" />
   </EntityContainer>
   <EntityType Name="w_property_information">
     <Key>
@@ -76,5 +77,15 @@
     <Property Name="rooms" Type="Int32" Nullable="false" />
     <Property Name="building_area" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="land_area" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="w_owners">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

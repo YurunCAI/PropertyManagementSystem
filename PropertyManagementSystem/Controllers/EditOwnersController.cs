@@ -10,103 +10,105 @@ using PropertyManagementSystem.Models;
 
 namespace PropertyManagementSystem.Controllers
 {
-    public class AddBuildingController : Controller
+    public class EditOwnersController : Controller
     {
         private PropertyManagementSystemEntities db = new PropertyManagementSystemEntities();
 
-        // GET: AddBuilding
+        // GET: EditOwners
         public ActionResult Index()
         {
-            return View(db.w_buildings.ToList());
+            return View(db.w_owners.ToList());
         }
 
-        // GET: AddBuilding/Details/5
+        // GET: EditOwners/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            w_buildings w_buildings = db.w_buildings.Find(id);
-            if (w_buildings == null)
+            w_owners w_owners = db.w_owners.Find(id);
+            if (w_owners == null)
             {
                 return HttpNotFound();
             }
-            return View(w_buildings);
+            return View(w_owners);
         }
 
-        // GET: AddBuilding/Create
+        // GET: EditOwners/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: AddBuilding/Create
+        // POST: EditOwners/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult Create([Bind(Include = "id,address,type,owner,phone,email,rooms,building_area,land_area")] w_buildings w_buildings)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "id,name,phone,email,password")] w_owners w_owners)
         {
             if (ModelState.IsValid)
             {
-                db.w_buildings.Add(w_buildings);
+                db.w_owners.Add(w_owners);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(w_buildings);
+            return View(w_owners);
         }
 
-        // GET: AddBuilding/Edit/5
+        // GET: EditOwners/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            w_buildings w_buildings = db.w_buildings.Find(id);
-            if (w_buildings == null)
+            w_owners w_owners = db.w_owners.Find(id);
+            if (w_owners == null)
             {
                 return HttpNotFound();
             }
-            return View(w_buildings);
+            return View(w_owners);
         }
 
-        // POST: AddBuilding/Edit/5
+        // POST: EditOwners/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult Edit([Bind(Include = "id,address,type,owner,phone,email,rooms,building_area,land_area")] w_buildings w_buildings)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "id,name,phone,email,password")] w_owners w_owners)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(w_buildings).State = EntityState.Modified;
+                db.Entry(w_owners).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(w_buildings);
+            return View(w_owners);
         }
 
-        // GET: AddBuilding/Delete/5
+        // GET: EditOwners/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            w_buildings w_buildings = db.w_buildings.Find(id);
-            if (w_buildings == null)
+            w_owners w_owners = db.w_owners.Find(id);
+            if (w_owners == null)
             {
                 return HttpNotFound();
             }
-            return View(w_buildings);
+            return View(w_owners);
         }
 
-        // POST: AddBuilding/Delete/5
+        // POST: EditOwners/Delete/5
         public ActionResult DeleteConfirmed(int id)
         {
-            w_buildings w_buildings = db.w_buildings.Find(id);
-            db.w_buildings.Remove(w_buildings);
+            w_owners w_owners = db.w_owners.Find(id);
+            db.w_owners.Remove(w_owners);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

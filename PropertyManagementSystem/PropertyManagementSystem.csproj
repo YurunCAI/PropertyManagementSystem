@@ -130,10 +130,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AddBuildingController.cs" />
     <Compile Include="Controllers\AddNewPublicController.cs" />
+    <Compile Include="Controllers\AddOwnerController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AnnouncementController.cs" />
     <Compile Include="Controllers\EditAdminController.cs" />
     <Compile Include="Controllers\EditBuildingsController.cs" />
+    <Compile Include="Controllers\EditOwnersController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\OwnerHomeController.cs" />
     <Compile Include="Controllers\SystemController.cs" />
@@ -166,6 +168,9 @@
       <DependentUpon>PropertyManagementDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\w_facilities.cs">
+      <DependentUpon>PropertyManagementDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\w_owners.cs">
       <DependentUpon>PropertyManagementDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\w_property_information.cs">
@@ -1971,6 +1976,16 @@
     <Content Include="Views\EditBuildings\Details.cshtml" />
     <Content Include="Views\EditBuildings\Edit.cshtml" />
     <Content Include="Views\EditBuildings\Index.cshtml" />
+    <Content Include="Views\AddOwner\Create.cshtml" />
+    <Content Include="Views\AddOwner\Delete.cshtml" />
+    <Content Include="Views\AddOwner\Details.cshtml" />
+    <Content Include="Views\AddOwner\Edit.cshtml" />
+    <Content Include="Views\AddOwner\Index.cshtml" />
+    <Content Include="Views\EditOwners\Create.cshtml" />
+    <Content Include="Views\EditOwners\Delete.cshtml" />
+    <Content Include="Views\EditOwners\Details.cshtml" />
+    <Content Include="Views\EditOwners\Edit.cshtml" />
+    <Content Include="Views\EditOwners\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

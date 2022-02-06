@@ -31,5 +31,6 @@ namespace PropertyManagementSystem.Models
         public virtual DbSet<w_facilities> w_facilities { get; set; }
         public virtual DbSet<w_announcement> w_announcement { get; set; }
         public virtual DbSet<w_buildings> w_buildings { get; set; }
+        public virtual DbSet<w_owners> w_owners { get; set; }
     }
 }
