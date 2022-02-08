@@ -1,0 +1,37 @@
+﻿@model IEnumerable<PropertyManagementSystem.Models.w_feetypes>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">System Params Management</div>
+                <div class="panel-body">
+                    <table class="table">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.type)
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.type)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                                    @*@Html.ActionLink("Details", "Details", new { id = item.id }) |*@
+                                    <a href="/EditTypes/DeleteConfirmed/@item.id" onclick="return confirm('Delete this data?')">Delete</a>
+                                    @*@Html.ActionLink("Delete", "Delete", new { id = item.id })*@
+                                </td>
+                            </tr>
+                        }
+
+                    </table>

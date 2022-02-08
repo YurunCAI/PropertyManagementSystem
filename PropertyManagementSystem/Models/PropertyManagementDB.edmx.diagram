@@ -12,6 +12,8 @@
         <EntityTypeShape EntityType="PropertyManagementSystemModel.w_announcement" Width="1.5" PointX="5.375" PointY="0.75" />
         <EntityTypeShape EntityType="PropertyManagementSystemModel.w_buildings" Width="1.5" PointX="5.375" PointY="3.75" />
         <EntityTypeShape EntityType="PropertyManagementSystemModel.w_owners" Width="1.5" PointX="7.25" PointY="0.875" />
+        <EntityTypeShape EntityType="PropertyManagementSystemModel.w_managers" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="PropertyManagementSystemModel.w_feetypes" Width="1.5" PointX="7.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

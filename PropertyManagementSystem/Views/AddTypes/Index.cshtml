@@ -1,0 +1,30 @@
+﻿@model IEnumerable<PropertyManagementSystem.Models.w_feetypes>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">System Params Management</div>
+                <div class="panel-body">
+                    <form action="/AddTypes/Create" style="margin-top:40px" method="post">
+                        <table class="table">
+                            <tr>
+                                <td align="right">type:</td>
+                                <td><input class="form-control" value="" name="type" required placeholder="Please enter type!" /></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="center">
+                                    <input type="submit" value="Save" class="btn btn-default" />
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

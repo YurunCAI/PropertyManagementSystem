@@ -129,13 +129,17 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AddBuildingController.cs" />
+    <Compile Include="Controllers\AddManagerController.cs" />
     <Compile Include="Controllers\AddNewPublicController.cs" />
     <Compile Include="Controllers\AddOwnerController.cs" />
+    <Compile Include="Controllers\AddTypesController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AnnouncementController.cs" />
     <Compile Include="Controllers\EditAdminController.cs" />
     <Compile Include="Controllers\EditBuildingsController.cs" />
+    <Compile Include="Controllers\EditManagersController.cs" />
     <Compile Include="Controllers\EditOwnersController.cs" />
+    <Compile Include="Controllers\EditTypesController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\OwnerHomeController.cs" />
     <Compile Include="Controllers\SystemController.cs" />
@@ -168,6 +172,12 @@
       <DependentUpon>PropertyManagementDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\w_facilities.cs">
+      <DependentUpon>PropertyManagementDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\w_feetypes.cs">
+      <DependentUpon>PropertyManagementDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\w_managers.cs">
       <DependentUpon>PropertyManagementDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\w_owners.cs">
@@ -1986,6 +1996,26 @@
     <Content Include="Views\EditOwners\Details.cshtml" />
     <Content Include="Views\EditOwners\Edit.cshtml" />
     <Content Include="Views\EditOwners\Index.cshtml" />
+    <Content Include="Views\AddManager\Create.cshtml" />
+    <Content Include="Views\AddManager\Delete.cshtml" />
+    <Content Include="Views\AddManager\Details.cshtml" />
+    <Content Include="Views\AddManager\Edit.cshtml" />
+    <Content Include="Views\AddManager\Index.cshtml" />
+    <Content Include="Views\EditManagers\Create.cshtml" />
+    <Content Include="Views\EditManagers\Delete.cshtml" />
+    <Content Include="Views\EditManagers\Details.cshtml" />
+    <Content Include="Views\EditManagers\Edit.cshtml" />
+    <Content Include="Views\EditManagers\Index.cshtml" />
+    <Content Include="Views\AddTypes\Create.cshtml" />
+    <Content Include="Views\AddTypes\Delete.cshtml" />
+    <Content Include="Views\AddTypes\Details.cshtml" />
+    <Content Include="Views\AddTypes\Edit.cshtml" />
+    <Content Include="Views\AddTypes\Index.cshtml" />
+    <Content Include="Views\EditTypes\Create.cshtml" />
+    <Content Include="Views\EditTypes\Delete.cshtml" />
+    <Content Include="Views\EditTypes\Details.cshtml" />
+    <Content Include="Views\EditTypes\Edit.cshtml" />
+    <Content Include="Views\EditTypes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

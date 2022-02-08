@@ -51,6 +51,24 @@
           <Property Name="contact_email" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="introduction" Type="varchar" MaxLength="300" Nullable="false" />
         </EntityType>
+        <EntityType Name="w_feetypes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="w_managers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="account" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="phone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="w_owners">
           <Key>
             <PropertyRef Name="id" />
@@ -89,6 +107,8 @@
           <EntitySet Name="w_announcement" EntityType="Self.w_announcement" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="w_buildings" EntityType="Self.w_buildings" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="w_facilities" EntityType="Self.w_facilities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="w_feetypes" EntityType="Self.w_feetypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="w_managers" EntityType="Self.w_managers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="w_owners" EntityType="Self.w_owners" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="w_property_information" EntityType="Self.w_property_information" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="w_system_params" EntityType="Self.w_system_params" Schema="dbo" store:Type="Tables" />
@@ -116,6 +136,8 @@
           <EntitySet Name="w_announcement" EntityType="PropertyManagementSystemModel.w_announcement" />
           <EntitySet Name="w_buildings" EntityType="PropertyManagementSystemModel.w_buildings" />
           <EntitySet Name="w_owners" EntityType="PropertyManagementSystemModel.w_owners" />
+          <EntitySet Name="w_managers" EntityType="PropertyManagementSystemModel.w_managers" />
+          <EntitySet Name="w_feetypes" EntityType="PropertyManagementSystemModel.w_feetypes" />
         </EntityContainer>
         <EntityType Name="w_property_information">
           <Key>
@@ -184,6 +206,24 @@
           <Property Name="phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="w_managers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="account" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="w_feetypes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -273,6 +313,26 @@
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="phone" ColumnName="phone" />
                 <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="w_managers">
+            <EntityTypeMapping TypeName="PropertyManagementSystemModel.w_managers">
+              <MappingFragment StoreEntitySet="w_managers">
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="account" ColumnName="account" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="w_feetypes">
+            <EntityTypeMapping TypeName="PropertyManagementSystemModel.w_feetypes">
+              <MappingFragment StoreEntitySet="w_feetypes">
+                <ScalarProperty Name="type" ColumnName="type" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

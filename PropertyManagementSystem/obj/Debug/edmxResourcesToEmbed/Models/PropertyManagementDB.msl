@@ -87,5 +87,25 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="w_managers">
+      <EntityTypeMapping TypeName="PropertyManagementSystemModel.w_managers">
+        <MappingFragment StoreEntitySet="w_managers">
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="account" ColumnName="account" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="w_feetypes">
+      <EntityTypeMapping TypeName="PropertyManagementSystemModel.w_feetypes">
+        <MappingFragment StoreEntitySet="w_feetypes">
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
