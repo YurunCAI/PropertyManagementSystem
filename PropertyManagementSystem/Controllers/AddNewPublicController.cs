@@ -100,21 +100,6 @@ namespace PropertyManagementSystem.Controllers
             return View(w_facilities);
         }
 
-        // GET: AddNewPublic/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            w_facilities w_facilities = db.w_facilities.Find(id);
-            if (w_facilities == null)
-            {
-                return HttpNotFound();
-            }
-            return View(w_facilities);
-        }
-
         // POST: AddNewPublic/Delete/5
         public ActionResult DeleteConfirmed(int id)
         {

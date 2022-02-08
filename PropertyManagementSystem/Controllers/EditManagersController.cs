@@ -35,29 +35,6 @@ namespace PropertyManagementSystem.Controllers
             return View(w_managers);
         }
 
-        // GET: EditManagers/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: EditManagers/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,account,password,name,phone,email")] w_managers w_managers)
-        {
-            if (ModelState.IsValid)
-            {
-                db.w_managers.Add(w_managers);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(w_managers);
-        }
-
         // GET: EditManagers/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -88,20 +65,6 @@ namespace PropertyManagementSystem.Controllers
             return View(w_managers);
         }
 
-        // GET: EditManagers/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            w_managers w_managers = db.w_managers.Find(id);
-            if (w_managers == null)
-            {
-                return HttpNotFound();
-            }
-            return View(w_managers);
-        }
 
         // POST: EditManagers/Delete/5
         public ActionResult DeleteConfirmed(int id)

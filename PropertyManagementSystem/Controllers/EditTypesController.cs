@@ -35,29 +35,6 @@ namespace PropertyManagementSystem.Controllers
             return View(w_feetypes);
         }
 
-        // GET: EditTypes/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: EditTypes/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,type")] w_feetypes w_feetypes)
-        {
-            if (ModelState.IsValid)
-            {
-                db.w_feetypes.Add(w_feetypes);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(w_feetypes);
-        }
-
         // GET: EditTypes/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -84,21 +61,6 @@ namespace PropertyManagementSystem.Controllers
                 db.Entry(w_feetypes).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
-            }
-            return View(w_feetypes);
-        }
-
-        // GET: EditTypes/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            w_feetypes w_feetypes = db.w_feetypes.Find(id);
-            if (w_feetypes == null)
-            {
-                return HttpNotFound();
             }
             return View(w_feetypes);
         }

@@ -35,28 +35,6 @@ namespace PropertyManagementSystem.Controllers
             return View(w_buildings);
         }
 
-        // GET: EditBuildings/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: EditBuildings/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,address,type,owner,phone,email,rooms,building_area,land_area")] w_buildings w_buildings)
-        {
-            if (ModelState.IsValid)
-            {
-                db.w_buildings.Add(w_buildings);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(w_buildings);
-        }
 
         // GET: EditBuildings/Edit/5
         public ActionResult Edit(int? id)
@@ -85,21 +63,6 @@ namespace PropertyManagementSystem.Controllers
                 db.Entry(w_buildings).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
-            }
-            return View(w_buildings);
-        }
-
-        // GET: EditBuildings/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            w_buildings w_buildings = db.w_buildings.Find(id);
-            if (w_buildings == null)
-            {
-                return HttpNotFound();
             }
             return View(w_buildings);
         }
