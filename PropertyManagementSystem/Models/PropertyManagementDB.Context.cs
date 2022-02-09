@@ -34,5 +34,6 @@ namespace PropertyManagementSystem.Models
         public virtual DbSet<w_owners> w_owners { get; set; }
         public virtual DbSet<w_managers> w_managers { get; set; }
         public virtual DbSet<w_feetypes> w_feetypes { get; set; }
+        public virtual DbSet<w_ownerfees> w_ownerfees { get; set; }
     }
 }

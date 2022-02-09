@@ -1,4 +1,4 @@
-﻿@model PropertyManagementSystem.Models.w_managers
+﻿@model PropertyManagementSystem.Models.w_ownerfees
 
 @{
     ViewBag.Title = "Details";
@@ -8,41 +8,18 @@
     <div class="row cm-fix-height">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Manager Detail</div>
+                <div class="panel-heading">Owner Fee Detail</div>
                 <div class="panel-body">
                     <div>
-
+                        <h4>w_ownerfees</h4>
+                        <hr />
                         <dl class="dl-horizontal">
-                            <dt>
-                                @Html.DisplayNameFor(model => model.account)
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.account)
-                            </dd>
-
-                            <dt>
-                                @Html.DisplayNameFor(model => model.password)
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.password)
-                            </dd>
-
                             <dt>
                                 @Html.DisplayNameFor(model => model.name)
                             </dt>
 
                             <dd>
                                 @Html.DisplayFor(model => model.name)
-                            </dd>
-
-                            <dt>
-                                @Html.DisplayNameFor(model => model.phone)
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.phone)
                             </dd>
 
                             <dt>
@@ -53,8 +30,33 @@
                                 @Html.DisplayFor(model => model.email)
                             </dd>
 
+                            <dt>
+                                @Html.DisplayNameFor(model => model.amount)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.amount)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.create_time)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.create_time)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.due_time)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.due_time)
+                            </dd>
+
                         </dl>
                     </div>
+
                 </div>
             </div>
         </div>

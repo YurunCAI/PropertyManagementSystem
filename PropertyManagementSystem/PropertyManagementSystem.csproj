@@ -138,15 +138,18 @@
     <Compile Include="Controllers\EditAdminController.cs" />
     <Compile Include="Controllers\EditBuildingsController.cs" />
     <Compile Include="Controllers\EditManagersController.cs" />
+    <Compile Include="Controllers\EditOwnerFeesController.cs" />
     <Compile Include="Controllers\EditOwnersController.cs" />
     <Compile Include="Controllers\EditTypesController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\OwnerHomeController.cs" />
     <Compile Include="Controllers\SystemController.cs" />
+    <Compile Include="Controllers\AddOwnerFeesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AddNewPublicMixModel.cs" />
+    <Compile Include="Models\AddOwnerFeesMixModel.cs" />
     <Compile Include="Models\PropertyManagementDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -178,6 +181,9 @@
       <DependentUpon>PropertyManagementDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\w_managers.cs">
+      <DependentUpon>PropertyManagementDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\w_ownerfees.cs">
       <DependentUpon>PropertyManagementDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\w_owners.cs">
@@ -1990,6 +1996,10 @@
     <Content Include="Views\AddTypes\Index.cshtml" />
     <Content Include="Views\EditTypes\Edit.cshtml" />
     <Content Include="Views\EditTypes\Index.cshtml" />
+    <Content Include="Views\AddOwnerFees\Index.cshtml" />
+    <Content Include="Views\EditOwnerFees\Details.cshtml" />
+    <Content Include="Views\EditOwnerFees\Edit.cshtml" />
+    <Content Include="Views\EditOwnerFees\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

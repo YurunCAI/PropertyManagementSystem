@@ -64,6 +64,17 @@
     <Property Name="phone" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
+  <EntityType Name="w_ownerfees">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="amount" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="create_time" Type="date" Nullable="false" />
+    <Property Name="due_time" Type="date" Nullable="false" />
+  </EntityType>
   <EntityType Name="w_owners">
     <Key>
       <PropertyRef Name="id" />
@@ -104,6 +115,7 @@
     <EntitySet Name="w_facilities" EntityType="Self.w_facilities" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="w_feetypes" EntityType="Self.w_feetypes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="w_managers" EntityType="Self.w_managers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="w_ownerfees" EntityType="Self.w_ownerfees" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="w_owners" EntityType="Self.w_owners" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="w_property_information" EntityType="Self.w_property_information" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="w_system_params" EntityType="Self.w_system_params" Schema="dbo" store:Type="Tables" />

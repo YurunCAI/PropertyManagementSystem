@@ -1,76 +1,57 @@
-﻿@model IEnumerable<PropertyManagementSystem.Models.w_buildings>
+﻿@model IEnumerable<PropertyManagementSystem.Models.w_ownerfees>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Dashboard.cshtml";
 }
-
-
 <div class="container-fluid">
     <div class="row cm-fix-height">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Edit Buildings</div>
+                <div class="panel-heading">Owners Fee Management</div>
                 <div class="panel-body">
                     <table class="table">
                         <tr>
                             <th>
-                                @Html.DisplayNameFor(model => model.address)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.type)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.owner)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.phone)
+                                @Html.DisplayNameFor(model => model.name)
                             </th>
                             <th>
                                 @Html.DisplayNameFor(model => model.email)
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.rooms)
+                                @Html.DisplayNameFor(model => model.amount)
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.building_area)
+                                @Html.DisplayNameFor(model => model.create_time)
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.land_area)
+                                @Html.DisplayNameFor(model => model.due_time)
                             </th>
                             <th></th>
                         </tr>
+
                         @foreach (var item in Model)
                         {
                             <tr>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.address)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.type)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.owner)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.phone)
+                                    @Html.DisplayFor(modelItem => item.name)
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.email)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.rooms)
+                                    @Html.DisplayFor(modelItem => item.amount)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.building_area)
+                                    @Html.DisplayFor(modelItem => item.create_time)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.land_area)
+                                    @Html.DisplayFor(modelItem => item.due_time)
                                 </td>
                                 <td>
                                     @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
                                     @Html.ActionLink("Details", "Details", new { id = item.id }) |
-                                    <a href="/EditBuildings/DeleteConfirmed/@item.id" onclick="return confirm('Delete this data?')">Delete</a>
+                                    <a href="/EditOwnerFees/DeleteConfirmed/@item.id" onclick="return confirm('Delete this data?')">Delete</a>
                                     @*@Html.ActionLink("Delete", "Delete", new { id = item.id })*@
                                 </td>
                             </tr>

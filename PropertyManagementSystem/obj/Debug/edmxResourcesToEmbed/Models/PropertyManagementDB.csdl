@@ -21,6 +21,7 @@
     <EntitySet Name="w_owners" EntityType="PropertyManagementSystemModel.w_owners" />
     <EntitySet Name="w_managers" EntityType="PropertyManagementSystemModel.w_managers" />
     <EntitySet Name="w_feetypes" EntityType="PropertyManagementSystemModel.w_feetypes" />
+    <EntitySet Name="w_ownerfees" EntityType="PropertyManagementSystemModel.w_ownerfees" />
   </EntityContainer>
   <EntityType Name="w_property_information">
     <Key>
@@ -107,5 +108,16 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="w_ownerfees">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="amount" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="create_time" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="due_time" Type="DateTime" Nullable="false" Precision="0" />
   </EntityType>
 </Schema>

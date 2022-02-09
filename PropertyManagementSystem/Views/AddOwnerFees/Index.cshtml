@@ -1,4 +1,4 @@
-﻿@model IEnumerable<PropertyManagementSystem.Models.w_owners>
+﻿@model IEnumerable<PropertyManagementSystem.Models.w_ownerfees>
 
 @{
     ViewBag.Title = "Index";
@@ -9,25 +9,29 @@
     <div class="row cm-fix-height">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Add New Owner</div>
+                <div class="panel-heading">Add New Owners Fee</div>
                 <div class="panel-body">
-                    <form action="/AddOwner/Create" style="margin-top:40px" method="post">
+                    <form action="/AddOwnerFees/Create" style="margin-top:40px" method="post">
                         <table class="table">
                             <tr>
                                 <td align="right">name:</td>
                                 <td><input class="form-control" value="" name="name" required placeholder="Please enter name!" /></td>
                             </tr>
                             <tr>
-                                <td align="right">phone:</td>
-                                <td><input class="form-control" value="" name="phone" required placeholder="Please enter phone!" /></td>
-                            </tr>
-                            <tr>
                                 <td align="right">email:</td>
                                 <td><input class="form-control" value="" name="email" required placeholder="Please enter email!" /></td>
                             </tr>
                             <tr>
-                                <td align="right">password:</td>
-                                <td><input class="form-control" value="" name="password" required placeholder="Please enter password!" /></td>
+                                <td align="right">amount:</td>
+                                <td><input class="form-control" value="" name="amount" required placeholder="Please enter amount!" /></td>
+                            </tr>
+                            <tr>
+                                <td align="right">create_time:</td>
+                                <td><input class="form-control" value="@DateTime.Now.ToString("yyyy-MM-dd")" name="create_time" required placeholder="Please enter create_time!" /></td>
+                            </tr>
+                            <tr>
+                                <td align="right">due_time:</td>
+                                <td><input class="form-control" value="@DateTime.Now.AddDays(7).ToString("yyyy-MM-dd")" name="due_time" required placeholder="Please enter due_time!" /></td>
                             </tr>
                             <tr>
                                 <td colspan="2" align="center">

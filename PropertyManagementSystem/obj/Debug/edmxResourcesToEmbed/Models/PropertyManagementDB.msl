@@ -107,5 +107,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="w_ownerfees">
+      <EntityTypeMapping TypeName="PropertyManagementSystemModel.w_ownerfees">
+        <MappingFragment StoreEntitySet="w_ownerfees">
+          <ScalarProperty Name="due_time" ColumnName="due_time" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
