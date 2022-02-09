@@ -39,5 +39,34 @@ namespace PropertyManagementSystem.Controllers
 
             return View();
         }
+
+        // GET: Login
+        public ActionResult OwnerIndex()
+        {
+            return View();
+        }
+
+        //Login function
+        [HttpPost]
+        public ActionResult OwnerIndex(string email, string password)
+        {
+            //db search data (user)
+            w_owners owner = db.w_owners.FirstOrDefault(p => p.email == email);
+            if (owner == null)
+            {
+                ViewBag.notice = "No such User";
+            }
+            else if (owner.password != password)
+            {
+                ViewBag.notice = "Wrong password";
+            }
+            else
+            {
+                //login success, jump to back-end owner management page 
+                return Redirect("/OwnerHome/index");
+            }
+
+            return View();
+        }
     }
 }

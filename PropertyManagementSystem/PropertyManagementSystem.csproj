@@ -2000,6 +2000,7 @@
     <Content Include="Views\EditOwnerFees\Details.cshtml" />
     <Content Include="Views\EditOwnerFees\Edit.cshtml" />
     <Content Include="Views\EditOwnerFees\Index.cshtml" />
+    <Content Include="Views\Login\OwnerIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
