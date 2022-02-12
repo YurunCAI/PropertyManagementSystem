@@ -26,7 +26,7 @@
                             <a class="sf-layers">Personal Information<span class="caret"></span></a>
                             <ul>
                                 <li><a href="/MyInfo/Index?email=@ViewBag.Email">My Informaiton</a></li>
-                                <li><a href="layouts-breadcrumb2.html">Change Password</a></li>
+                                <li><a href="/MyInfo/ChangePassword?email=@ViewBag.Email">Change Password</a></li>
                             </ul>
                         </li>
 
@@ -117,7 +117,7 @@
                 <button class="btn btn-primary md-account-circle-white" data-toggle="dropdown"></button>
                 <ul class="dropdown-menu">
                     <li class="disabled text-center">
-                        <a style="cursor:default;"><strong>John Smith</strong></a>
+                        <a style="cursor:default;"><strong>@ViewBag.Name</strong></a>
                     </li>
                     <li class="divider"></li>
                     <li>

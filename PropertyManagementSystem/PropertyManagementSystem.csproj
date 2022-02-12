@@ -2003,6 +2003,7 @@
     <Content Include="Views\EditOwnerFees\Index.cshtml" />
     <Content Include="Views\Login\OwnerIndex.cshtml" />
     <Content Include="Views\MyInfo\Index.cshtml" />
+    <Content Include="Views\MyInfo\ChangePassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
