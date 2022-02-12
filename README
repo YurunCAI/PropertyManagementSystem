@@ -7,8 +7,15 @@ At the same time, owners can get information about property online.
 User : property owner, Property Manager
 
 Include Function : 
-  Property Management
-  Biulding Management
-  Owners Management
-  Fee Management
-  System Management
+  Manager Dashboard:
+    Property Management
+    Biulding Management
+    Owners Management
+    Fee Management
+    System Management
+  Owner Dashboard:
+    My Information
+    Fee Management
+    Repair Request
+    Complients Management
+  Property HomePage (Offical Website)    
