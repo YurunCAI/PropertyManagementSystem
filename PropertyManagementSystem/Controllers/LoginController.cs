@@ -62,10 +62,9 @@ namespace PropertyManagementSystem.Controllers
             }
             else
             {
+                //login success, jump to back-end owner management page 
                 string url = "/OwnerHome/Index?email=" + email;
                 return Redirect(url);
-                //login success, jump to back-end owner management page 
-                //return RedirectToAction("Index","OwnerHome", new { email = email });
             }
 
             return View();

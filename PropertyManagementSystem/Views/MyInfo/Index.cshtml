@@ -1,10 +1,11 @@
-﻿@model PropertyManagementSystem.Models.w_owners
+﻿
+@model IEnumerable<PropertyManagementSystem.Models.w_buildings>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_OwnerDashboard.cshtml";
 }
 
-<h2>@ViewBag.Email</h2>
 <div class="container-fluid">
     <div class="row cm-fix-height">
         <div class="col-md-12">
@@ -12,10 +13,9 @@
                 <div class="panel-heading">My Information</div>
                 <div class="panel-body">
                     <div>
-
                         <dl class="dl-horizontal">
                             <dt>
-                                @Html.DisplayNameFor(model => model.name)
+                                Name
                             </dt>
 
                             <dd>
@@ -23,7 +23,7 @@
                             </dd>
 
                             <dt>
-                                @Html.DisplayNameFor(model => model.phone)
+                                Phone
                             </dt>
 
                             <dd>
@@ -31,7 +31,7 @@
                             </dd>
 
                             <dt>
-                                @Html.DisplayNameFor(model => model.email)
+                                Email
                             </dt>
 
                             <dd>
@@ -39,6 +39,46 @@
                             </dd>
                         </dl>
                     </div>
+
+                    @foreach (var item in Model)
+                    {
+                        <div>
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    Address
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(modelItem => item.address)
+                                </dd>
+
+                                <dt>
+                                    Type
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(modelItem => item.type)
+                                </dd>
+
+                                <dt>
+                                    Building Area
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(modelItem => item.building_area)
+                                </dd>
+
+                                <dt>
+                                    Land Area
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(modelItem => item.land_area)
+                                </dd>
+
+                            </dl>
+                        </div>
+                    }
 
                 </div>
             </div>

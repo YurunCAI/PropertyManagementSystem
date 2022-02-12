@@ -21,7 +21,13 @@ namespace PropertyManagementSystem.Controllers
             ViewBag.Email = email;
             ViewBag.Phone = owner.phone;
             ViewBag.Name = owner.name;
-            return View();
+
+            IEnumerable<w_buildings> buildings = db.w_buildings;
+            if (!string.IsNullOrEmpty(email))
+            {
+                buildings = buildings.Where(p => p.email == email);
+            }
+            return View(buildings.ToList());
         }
 
         // GET: EditOwners/Edit/5
