@@ -86,13 +86,13 @@ namespace PropertyManagementSystem.Controllers
             Session["nickname"] = null;
             return Redirect("/Login/index");
         }
-        public ActionResult OwnerLogout()
+        public ActionResult OwnerLogoff()
         {
             Session["id"] = null;
             Session["email"] = null;
             Session["name"] = null;
             Session["phone"] = null;
-            return Redirect("/Login/OwnerIndex");
+            return Redirect("/Login/Index");
         }
     }
 }
