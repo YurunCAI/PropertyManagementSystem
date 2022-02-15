@@ -61,7 +61,7 @@
                 <button class="btn btn-primary md-account-circle-white" data-toggle="dropdown"></button>
                 <ul class="dropdown-menu">
                     <li class="disabled text-center">
-                        <a style="cursor:default;"><strong>@ViewBag.Name</strong></a>
+                        <a style="cursor:default;"><strong>@Session["name"]</strong></a>
                     </li>
                     <li class="divider"></li>
                     <li>
@@ -89,10 +89,10 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">My Information</div>
                         <div class="panel-body demo-btn">
-                            <p>ID: @ViewBag.Id </p>
-                            <p>Name: @ViewBag.Name </p>
-                            <p>Phone: @ViewBag.Phone </p>
-                            <p>Email: @ViewBag.Email </p>
+                            <p>ID: @Session["id"] </p>
+                            <p>Name: @Session["name"]</p>
+                            <p>Phone: @Session["phone"] </p>
+                            <p>Email: @Session["email"] </p>
                         </div>
                     </div>
                 </div>

@@ -15,6 +15,7 @@ namespace PropertyManagementSystem.Controllers
         // GET: Login
         public ActionResult Index()
         {
+            //if (Session["nickname"] == null) return Redirect("/Login/Index"); 
             return View();
         }
 
@@ -33,8 +34,12 @@ namespace PropertyManagementSystem.Controllers
             }
             else
             {
+                //Session
+                Session["username"] = admin.username;
+                Session["nickname"] = admin.nickname;
+
                 //login success, jump to back-end management page 
-                return Redirect("/Admin/index");
+                return Redirect("/Admin/Index");
             }
 
             return View();
@@ -62,12 +67,32 @@ namespace PropertyManagementSystem.Controllers
             }
             else
             {
+                //Session
+                Session["id"] = owner.id;
+                Session["email"] = owner.email;
+                Session["name"] = owner.name;
+                Session["phone"] = owner.phone;
+
                 //login success, jump to back-end owner management page 
-                string url = "/OwnerHome/Index?email=" + email;
-                return Redirect(url);
+                return Redirect("/OwnerHome/Index");
             }
 
             return View();
+        }
+
+        public ActionResult Logout()
+        {
+            Session["username"] = null;
+            Session["nickname"] = null;
+            return Redirect("/Login/index");
+        }
+        public ActionResult OwnerLogout()
+        {
+            Session["id"] = null;
+            Session["email"] = null;
+            Session["name"] = null;
+            Session["phone"] = null;
+            return Redirect("/Login/OwnerIndex");
         }
     }
 }

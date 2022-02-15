@@ -15,11 +15,18 @@
                     <div>
                         <dl class="dl-horizontal">
                             <dt>
+                                ID
+                            </dt>
+
+                            <dd>
+                                @Session["id"]
+                            </dd>
+                            <dt>
                                 Name
                             </dt>
 
                             <dd>
-                                @ViewBag.Name
+                                @Session["name"]
                             </dd>
 
                             <dt>
@@ -27,7 +34,7 @@
                             </dt>
 
                             <dd>
-                                @ViewBag.Phone
+                                @Session["phone"]
                             </dd>
 
                             <dt>
@@ -35,53 +42,62 @@
                             </dt>
 
                             <dd>
-                                @ViewBag.Email
+                                @Session["email"]
                             </dd>
                         </dl>
                     </div>
-
-                    @foreach (var item in Model)
-                    {
-                        <div>
-                            <dl class="dl-horizontal">
-                                <dt>
-                                    Address
-                                </dt>
-
-                                <dd>
-                                    @Html.DisplayFor(modelItem => item.address)
-                                </dd>
-
-                                <dt>
-                                    Type
-                                </dt>
-
-                                <dd>
-                                    @Html.DisplayFor(modelItem => item.type)
-                                </dd>
-
-                                <dt>
-                                    Building Area
-                                </dt>
-
-                                <dd>
-                                    @Html.DisplayFor(modelItem => item.building_area)
-                                </dd>
-
-                                <dt>
-                                    Land Area
-                                </dt>
-
-                                <dd>
-                                    @Html.DisplayFor(modelItem => item.land_area)
-                                </dd>
-
-                            </dl>
-                        </div>
-                    }
-
                 </div>
             </div>
+
+
+            @foreach (var item in Model)
+            {
+                <div class="row cm-fix-height">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">@Html.DisplayFor(modelItem => item.address)</div>
+                            <div class="panel-body">
+                                <div>
+                                    <dl class="dl-horizontal">
+                                        <dt>
+                                            Address
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(modelItem => item.address)
+                                        </dd>
+
+                                        <dt>
+                                            Type
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(modelItem => item.type)
+                                        </dd>
+
+                                        <dt>
+                                            Building Area
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(modelItem => item.building_area)
+                                        </dd>
+
+                                        <dt>
+                                            Land Area
+                                        </dt>
+
+                                        <dd>
+                                            @Html.DisplayFor(modelItem => item.land_area)
+                                        </dd>
+
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
         </div>
     </div>
 </div>

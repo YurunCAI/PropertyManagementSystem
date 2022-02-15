@@ -25,8 +25,8 @@
                         <li class="active cm-submenu">
                             <a class="sf-layers">Personal Information<span class="caret"></span></a>
                             <ul>
-                                <li><a href="/MyInfo/Index?email=@ViewBag.Email">My Informaiton</a></li>
-                                <li><a href="/MyInfo/ChangePassword?email=@ViewBag.Email">Change Password</a></li>
+                                <li><a href="/MyInfo/Index">My Informaiton</a></li>
+                                <li><a href="/MyInfo/ChangePassword">Change Password</a></li>
                             </ul>
                         </li>
 
@@ -34,7 +34,6 @@
                         <li class="cm-submenu">
                             <a class="sf-house">Property Fee Management<span class="caret"></span></a>
                             <ul>
-                                <li><a href="layouts-breadcrumb2.html">Property Fee Type</a></li>
                                 <li><a href="layouts-breadcrumb2.html">My Property Cost</a></li>
                             </ul>
                         </li>
@@ -117,7 +116,7 @@
                 <button class="btn btn-primary md-account-circle-white" data-toggle="dropdown"></button>
                 <ul class="dropdown-menu">
                     <li class="disabled text-center">
-                        <a style="cursor:default;"><strong>@ViewBag.Name</strong></a>
+                        <a style="cursor:default;"><strong>@Session["name"]</strong></a>
                     </li>
                     <li class="divider"></li>
                     <li>
@@ -127,7 +126,7 @@
                         <a href="#"><i class="fa fa-fw fa-cog"></i> Settings</a>
                     </li>
                     <li>
-                        <a href="login.html"><i class="fa fa-fw fa-sign-out"></i> Sign out</a>
+                        <a href="/Login/OwnerLogout"><i class="fa fa-fw fa-sign-out"></i> Sign out</a>
                     </li>
                 </ul>
             </div>

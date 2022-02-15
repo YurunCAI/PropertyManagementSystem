@@ -12,10 +12,11 @@ namespace PropertyManagementSystem.Controllers
 
         private PropertyManagementSystemEntities db = new PropertyManagementSystemEntities();
         // GET: OwnerHome
-        public ActionResult Index(string email)
+        public ActionResult Index()
         {
+            var email = Session["email"].ToString();
             w_owners owner = db.w_owners.FirstOrDefault(p => p.email == email);
-            ViewBag.Email = email;
+            ViewBag.Email = owner.email;
             ViewBag.Phone = owner.phone;
             ViewBag.Name = owner.name;
             return View();

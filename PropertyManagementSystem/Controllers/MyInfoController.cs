@@ -15,12 +15,9 @@ namespace PropertyManagementSystem.Controllers
         private PropertyManagementSystemEntities db = new PropertyManagementSystemEntities();
 
         // GET: MyInfo
-        public ActionResult Index(string email)
+        public ActionResult Index()
         {
-            w_owners owner = db.w_owners.FirstOrDefault(p => p.email == email);
-            ViewBag.Email = email;
-            ViewBag.Phone = owner.phone;
-            ViewBag.Name = owner.name;
+            var email = Session["email"].ToString();
 
             IEnumerable<w_buildings> buildings = db.w_buildings;
             if (!string.IsNullOrEmpty(email))
@@ -31,8 +28,9 @@ namespace PropertyManagementSystem.Controllers
         }
 
         // GET: EditOwners/Edit/5
-        public ActionResult ChangePassword(string email)
+        public ActionResult ChangePassword()
         {
+            var email = Session["email"].ToString();
             if (email == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -79,8 +77,10 @@ namespace PropertyManagementSystem.Controllers
                     }
                     throw;
                 }
-                string url = "/OwnerHome/Index?email=" + owner.email;
-                return Redirect(url);
+                Session["name"] = owner.name;
+                Session["phone"] = owner.phone;
+                Session["email"] = owner.email;
+                return Redirect("/OwnerHome/Index");
             }
             return View();
         }
